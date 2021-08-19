@@ -1,9 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+ul,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
 #map {
     width: 100%;
     height: 100vh;
 }
 
-body {
-    margin: 0;
-    padding: 0;
+.hidden {
+    display: none;
+}
+
+.review {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translate(-65px,-105%);
+}
+
+.review::after {
+    content: '';
+    position: absolute;
+    left: 50px;
+    bottom: -30px;
+    border: 15px solid transparent;
+    border-top: 15px solid white;
+}
+
+.review__inner {
+    padding: 29px 26px 20px 17px;
+}
+
+#close {
+    cursor: pointer;
+}
+
+#close:before,
+#close:after {
+    position: absolute;
+    right: 4%;
+    top: 2%;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #a9a9a9;
+}
+
+#close:before {
+    transform: rotate(45deg);
+}
+
+#close:after {
+    transform: rotate(-45deg);
+}
+
+.review__header {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.4px;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.review__inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+}
+
+.review__input {
+    width: 310px;
+    height: 38px;
+    margin-bottom: 10px;
+    padding: 11px;
+    border: 1px solid #CFCFCF;
+    border-radius: 3px;
+}
+
+.review__input::placeholder {
+    color: black;
+}
+
+.review__text {
+    height: 98px;
+    padding: 11px;
+    border: 1px solid #CFCFCF;
+    border-radius: 3px;
+}
+
+.review__text::placeholder {
+    color: black;
+}
+
+.btn {
+    padding: 11px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    background: #FF8663;
+    border-radius: 3px;
+
 }
