@@ -69,7 +69,7 @@ textarea {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transform: translate(-65px,-105%);
+    transform: translate(-65px, -105%);
 }
 
 .review::after {
@@ -108,12 +108,45 @@ textarea {
     transform: rotate(-45deg);
 }
 
+.review__prev {
+    font-size: 16px;
+    line-height: 18px;
+    max-height: 160px;
+    margin-bottom: 14px;
+}
+
+.review__prev::after {
+    position: absolute;
+    content: ' ';
+    height: 1px;
+    width: 310px;
+    background-color: #E7E7E7;
+}
+
+.review__prev-name {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.review__prev-place {
+    display: inline-block;
+    color: #8F8F8F;
+}
+
+.review__prev-text {
+    color: #8F8F8F;
+    margin-bottom: 20px;
+}
+
 .review__header {
     font-size: 16px;
     font-weight: 700;
     line-height: 18.4px;
     margin-top: 0;
     margin-bottom: 18px;
+    padding-top: 5%;
 }
 
 .review__inputs {
@@ -155,5 +188,5 @@ textarea {
     line-height: 16px;
     background: #FF8663;
     border-radius: 3px;
-
+    border: none;
 }
