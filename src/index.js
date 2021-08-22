@@ -1,7 +1,4 @@
 import "./css/main.css"
-import { initMap } from "./js/ymaps";
-// import { initForm } from "./js/form";
+import GeoReview from "./js/geoReview"
 
-
-window.onload = initMap()
-// window.onload = initForm()
+new GeoReview();

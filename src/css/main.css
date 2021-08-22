@@ -57,56 +57,29 @@ textarea {
     height: 100vh;
 }
 
-.hidden {
-    display: none;
-}
-
 .review {
     font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
+    /* position: absolute;
     left: 20%;
     top: 20%;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    transform: translate(-65px, -105%);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); */
+    /* transform: translate(-65px, -105%); */
 }
 
-.review::after {
+/* .review::after {
     content: '';
     position: absolute;
     left: 50px;
     bottom: -30px;
     border: 15px solid transparent;
     border-top: 15px solid white;
-}
+} */
 
-.review__inner {
+/* .review__inner {
     padding: 29px 26px 20px 17px;
-}
-
-#close {
-    cursor: pointer;
-}
-
-#close:before,
-#close:after {
-    position: absolute;
-    right: 4%;
-    top: 2%;
-    content: ' ';
-    height: 20px;
-    width: 2px;
-    background-color: #a9a9a9;
-}
-
-#close:before {
-    transform: rotate(45deg);
-}
-
-#close:after {
-    transform: rotate(-45deg);
-}
+} */
 
 .review__prev {
     font-size: 16px;
@@ -115,13 +88,13 @@ textarea {
     margin-bottom: 14px;
 }
 
-.review__prev::after {
+/* .review__prev::after {
     position: absolute;
     content: ' ';
     height: 1px;
     width: 310px;
     background-color: #E7E7E7;
-}
+} */
 
 .review__prev-name {
     display: inline-block;
@@ -144,9 +117,9 @@ textarea {
     font-size: 16px;
     font-weight: 700;
     line-height: 18.4px;
-    margin-top: 0;
     margin-bottom: 18px;
-    padding-top: 5%;
+    /* margin-top: 0;
+    padding-top: 5%; */
 }
 
 .review__inputs {
@@ -170,10 +143,12 @@ textarea {
 }
 
 .review__text {
+    font-family: Arial, Helvetica, sans-serif;
     height: 98px;
     padding: 11px;
     border: 1px solid #CFCFCF;
     border-radius: 3px;
+    resize: none;
 }
 
 .review__text::placeholder {

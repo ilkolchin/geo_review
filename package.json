@@ -5,12 +5,13 @@
   "author": "Arsenii Berezin",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack serve --mode development --open",
+    "dev": "webpack serve --mode development",
     "start": "npm run dev"
   },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.14.7",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
@@ -40,5 +41,10 @@
   "bugs": {
     "url": "https://github.com/b-ars07/webpack-env/issues"
   },
-  "homepage": "https://github.com/b-ars07/webpack-env#readme"
+  "homepage": "https://github.com/b-ars07/webpack-env#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.15.3",
+    "core-js": "^2.6.9",
+    "regenerator-runtime": "^0.11.1"
+  }
 }

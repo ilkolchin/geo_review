@@ -2,20 +2,16 @@
 <template>
   <div class="review">
     <div class="review__inner">
-      <span id="close"></span>
       <div class="review__prev">
-        <div class="review__prev-name"></div>
-        <div class="review__prev-place"></div>
-        <div class="review__prev-text"></div>
       </div>
-      <div class="review__form">
+      <div data-role="review-form" class="review__form">
         <h1 class="review__header">Отзыв:</h1>
         <div class="review__inputs">
-          <input type="text" id="name" placeholder="Укажите ваше имя" class="review__input">
-          <input type="text" id="place" placeholder="Укажите место" class="review__input">
-          <input type="text" id="review_text" placeholder="Оставьте отзыв" class="review__text">
+          <input data-role="review-name" type="text" placeholder="Укажите ваше имя" class="review__input">
+          <input data-role="review-place" type="text" placeholder="Укажите место" class="review__input">
+          <textarea data-role="review-text" placeholder="Оставьте отзыв" class="review__text"></textarea>
         </div>
-        <button class="btn">Добавить</button>
+        <button data-role="review-add" class="btn">Добавить</button>
       </div>
     </div>
   </div>
