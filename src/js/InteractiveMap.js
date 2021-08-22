@@ -24,6 +24,7 @@ export default class InteractiveMap {
       groupByCoordinates: true,
       clusterDisableClickZoom: true,
       clusterOpenBaloonOnClick: false,
+      hasBalloon: false
     })
     this.clusterer.events.add('click', (e) => {
       const coords = e.get('target').geometry.getCoordinates();

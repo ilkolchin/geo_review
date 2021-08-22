@@ -32,15 +32,19 @@ export default class GeoReview {
       reviewForm.dataset.coords = JSON.stringify(coords);
       console.log(reviews);
 
-      const div = document.createElement('div');
-      div.classList.add('review-item');
-      div.innerHTML = `
+      for (const item of reviews) {
+        const div = document.createElement('div');
+        div.classList.add('review-item');
+        div.innerHTML = `
     <div>
-      <b>${reviews.name}</b> [${reviews.place}]
+      <b>${item.name}</b> [${item.place}]
     </div>
-    <div>${reviews.text}</div>
+    <div>${item.text}</div>
     `;
-      reviewPrev.appendChild(div);
+        reviewPrev.appendChild(div);
+      }
+
+
       return root;
 
     }
@@ -63,11 +67,25 @@ export default class GeoReview {
         place: document.querySelector('[data-role=review-place]').value,
         text: document.querySelector('[data-role=review-text]').value,
       };
+      const dataArray = [data];
 
-      localStorage.setItem(coords, JSON.stringify(data));
+      // let keys = Object.keys(localStorage);
+      // for (const key of keys) {
+      //   if (reviewForm.dataset.coords !== "[" + key + "]") {
+      //     console.log('не равно');
+      //     localStorage.setItem(coords, JSON.stringify(dataArray));
+      //     this.map.createPlacemark(coords);
+      //     this.map.closeBalloon();
+      //   } else {
+      //     dataArray.push(data);
+      //     localStorage.setItem(coords, JSON.stringify(dataArray));
+      //     this.map.createPlacemark(coords);
+      //     this.map.closeBalloon();
+      //   }
+      // }
+      localStorage.setItem(coords, JSON.stringify(dataArray));
       this.map.createPlacemark(coords);
       this.map.closeBalloon();
     }
   }
-
 }
