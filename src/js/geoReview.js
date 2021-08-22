@@ -8,12 +8,14 @@ export default class GeoReview {
   }
 
   onInit() {
-    let key = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      key = localStorage.key(i).split(',').map(Number);
-      this.map.createPlacemark(key);
+    let keys = Object.keys(localStorage);
+    for (const key of keys) {
+      const count = JSON.parse(localStorage.getItem(key)).length;
+      for (let i = 0; i < count; i++) {
+        const coords = key.split(',').map(Number);
+        this.map.createPlacemark(coords);
+      }
     }
-
     document.body.addEventListener('click', this.onAddBtnClick.bind(this));
   }
 
@@ -30,7 +32,7 @@ export default class GeoReview {
       const reviewPrev = root.querySelector('.review__prev');
       const reviewForm = root.querySelector('[data-role=review-form]');
       reviewForm.dataset.coords = JSON.stringify(coords);
-      console.log(reviews);
+
 
       for (const item of reviews) {
         const div = document.createElement('div');
@@ -43,10 +45,7 @@ export default class GeoReview {
     `;
         reviewPrev.appendChild(div);
       }
-
-
       return root;
-
     }
   }
 
@@ -54,8 +53,6 @@ export default class GeoReview {
     const list = localStorage.getItem(coords.toString());
     const form = this.createForm(coords, JSON.parse(list));
     this.map.openBalloon(coords, form.innerHTML);
-    // this.map.setBalloonContent(form.innerHTML);
-
   }
 
   async onAddBtnClick(e) {
@@ -67,22 +64,22 @@ export default class GeoReview {
         place: document.querySelector('[data-role=review-place]').value,
         text: document.querySelector('[data-role=review-text]').value,
       };
-      const dataArray = [data];
+      let dataArray;
+      let keys = Object.keys(localStorage);
 
-      // let keys = Object.keys(localStorage);
-      // for (const key of keys) {
-      //   if (reviewForm.dataset.coords !== "[" + key + "]") {
-      //     console.log('не равно');
-      //     localStorage.setItem(coords, JSON.stringify(dataArray));
-      //     this.map.createPlacemark(coords);
-      //     this.map.closeBalloon();
-      //   } else {
-      //     dataArray.push(data);
-      //     localStorage.setItem(coords, JSON.stringify(dataArray));
-      //     this.map.createPlacemark(coords);
-      //     this.map.closeBalloon();
-      //   }
-      // }
+      if (keys.length < 1) {
+        dataArray = [data];
+      }
+      for (const key of keys) {
+        if (reviewForm.dataset.coords !== "[" + key + "]") {
+          dataArray = [data];
+        } else {
+          dataArray = JSON.parse(localStorage.getItem(key));
+          console.log(dataArray);
+          dataArray.push(data);
+        }
+      }
+      
       localStorage.setItem(coords, JSON.stringify(dataArray));
       this.map.createPlacemark(coords);
       this.map.closeBalloon();
