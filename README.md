@@ -1,5 +1,7 @@
 ## LoftSchool Project
 
+Creating reviews about locations you have visited using YMaps
+
 ### Доступные команды
 
 * `npm install` - установить зависимости
