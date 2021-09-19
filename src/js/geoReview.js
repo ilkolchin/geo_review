@@ -75,7 +75,7 @@ export default class GeoReview {
           dataArray = [data];
         } else {
           dataArray = JSON.parse(localStorage.getItem(key));
-          console.log(dataArray);
+          // console.log(dataArray);
           dataArray.push(data);
         }
       }
